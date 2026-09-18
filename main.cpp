@@ -76,10 +76,12 @@ bool isSorted(const int* arr, const int size) {
     return true; // No out-of-order pairs found
 }
 
+//Part 3 //Demonstrate the TDD Cycle
+// I am verifying the successful transition from a failing state to a completely passing state.
+
 int main() {
-    std::cout << "Running tests after implementation...\n";
+    std::cout << "Running final verified test suite with all edge cases...\n";
     
-    // I am now running all the initial and additional tests
     testSortedArray();
     testUnsortedArray();
     testDuplicatesArray();
@@ -89,6 +91,7 @@ int main() {
     testEmptyArray();
     testAllIdenticalElements();
     
-    std::cout << "All 8 tests passed successfully!\n";
+    std::cout << "TDD Verification Complete. All edge cases handled cleanly.\n";
     return 0;
 }
+
