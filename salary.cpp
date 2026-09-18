@@ -23,7 +23,7 @@ int main(){
     }
 
     cout << endl;
-    return 0;
     delete [] salArray;
 
+    return 0;
 }
