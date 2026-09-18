@@ -58,17 +58,37 @@ void testAllIdenticalElements() {
     std::cout << "Test 8 Passed: All identical elements\n";
 }
 
-// Fake implementation so the code can compile
+//Part 2 
+// I am implementing the loop to check if every element is less than or equal to the next one.
 bool isSorted(const int* arr, const int size) {
-    // I am returning false temporarily to create a failing state for the TDD cycle
-    return false; 
+    // An array with 0 or 1 element is always sorted
+    if (size <= 1) {
+        return true;
+    }
+    
+    // I am checking if any element is greater than the next element
+    for (int i = 0; i < size - 1; i++) {
+        if (arr[i] > arr[i + 1]) {
+            return false; // Found an out-of-order pair
+        }
+    }
+    
+    return true; // No out-of-order pairs found
 }
 
 int main() {
-    std::cout << "Running initial tests\n";
+    std::cout << "Running tests after implementation...\n";
     
-    // I am running the first test to show the TDD failure stage
-    testSortedArray(); 
+    // I am now running all the initial and additional tests
+    testSortedArray();
+    testUnsortedArray();
+    testDuplicatesArray();
+    testSingleElementArray();
+    testDescendingArray();
+    testNegativeValuesArray();
+    testEmptyArray();
+    testAllIdenticalElements();
     
+    std::cout << "All 8 tests passed successfully!\n";
     return 0;
 }
